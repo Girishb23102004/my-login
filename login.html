@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Login Popup</title>
+    <style>
+        /* Circle Button */
+        .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid black;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: lightblue;
+            cursor: pointer;
+        }
+
+        /* Login Box */
+        .login-box {
+            display: none; /* Initially hidden */ 
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        /* Close Button */
+        .close-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Clickable Circle -->
+    <div class="circle" onclick="showLoginBox()"></div>
+
+    <!-- Login Box -->
+    <div id="loginBox" class="login-box">
+        <h2>Login</h2>
+        <input type="text" placeholder="Username"><br><br>
+        <input type="password" placeholder="Password"><br><br>
+        <button>Login</button>
+        <br><br>
+        <button class="close-btn" onclick="closeLoginBox()">Close</button>
+    </div>
+
+    <script>
+        function showLoginBox() {
+            document.getElementById("loginBox").style.display = "block";
+        }
+
+        function closeLoginBox() {
+            document.getElementById("loginBox").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
